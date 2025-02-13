@@ -1,0 +1,53 @@
+"use client";
+
+import {
+  Button,
+  IconButton,
+  Table,
+  TableContainer,
+  Tbody,
+  Td,
+  Tfoot,
+  Th,
+  Thead,
+  Tr,
+} from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
+import React, { PropsWithChildren } from "react";
+
+const Clients = ({ children }: PropsWithChildren) => {
+  const route = useRouter();
+
+  return (
+    <div>
+      <TableContainer borderRadius={0}>
+        <Table size="lg">
+          <Thead>
+            <Tr bg={"#2D3748"}>
+              <Th color={"white"}>ID</Th>
+              <Th color={"white"}>Name</Th>
+              <Th color={"white"}>Logo</Th>
+              <Th color={"white"}>Category</Th>
+              <Th color={"white"}>ProjectNo</Th>
+              <Th color={"white"}>Date</Th>
+              <Th color={"white"}>Created At</Th>
+              <Th color={"white"}>Updated At</Th>
+              <Th color={"white"} isNumeric>
+                <Button
+                  colorScheme="teal"
+                  variant="outline"
+                  onClick={() => route.push("/admin/clients/new")}
+                >
+                  Create
+                </Button>{" "}
+              </Th>
+            </Tr>
+          </Thead>
+          <Tbody bg={"#CBD5E0"}>{children}</Tbody>
+        </Table>
+      </TableContainer>
+    </div>
+  );
+};
+
+export default Clients;

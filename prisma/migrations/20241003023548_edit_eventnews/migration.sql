@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "NewsEvents" ALTER COLUMN "title" SET DATA TYPE VARCHAR(225),
+ALTER COLUMN "short_description" SET DATA TYPE VARCHAR(225);
