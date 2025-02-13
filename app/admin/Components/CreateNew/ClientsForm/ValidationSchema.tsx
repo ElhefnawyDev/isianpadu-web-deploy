@@ -5,7 +5,7 @@ export const createClientsSchema = z.object({
   name: z
     .string()
     .min(1, { message: "Client name is required." })
-    .max(100, { message: "Client name must be less than 100 characters." }),
+    .max(20, { message: "Client name must be less than 20 characters." }),
 
   category: z
     .string()
@@ -26,7 +26,9 @@ export const createClientsSchema = z.object({
         description: z
           .string()
           .min(1, { message: "Project description is required." })
-          .max(500, { message: "Project description must be less than 500 characters." }),
+          .max(500, {
+            message: "Project description must be less than 500 characters.",
+          }),
       })
     )
     .min(1, { message: "At least one project is required." }),

@@ -1,19 +1,15 @@
-import { sql } from "@vercel/postgres";
+"use client"; // This directive makes sure this component runs on the client side
 
-export default async function Cart({
-  params
-} : {
-  params: { user: string }
-}): Promise<JSX.Element> {
-  const { rows } = await sql`SELECT * from user`;
+import { useEffect } from "react";
+import { useRouter } from "next/navigation"; // Use next/navigation for Next.js 13+ if needed
 
-  return (
-    <div>
-      {rows.map((row) => (
-        <div key={row.id}>
-          {row.id} - {row.quantity}
-        </div>
-      ))}
-    </div>
-  );
+export default function Cart() {
+  const router = useRouter();
+
+  useEffect(() => {
+    // Redirect to newhome page when the component is mounted
+    router.push("/home");
+  }, [router]);
+
+  return null; // No need to render anything, just a redirect
 }
