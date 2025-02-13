@@ -9,6 +9,7 @@ import "easymde/dist/easymde.min.css";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { createHomeGISchema } from "./ValidationSchema";
+import ErrorsMessage from "../../ErrorsMessage";
 
 type HomeGIFormData = z.infer<typeof createHomeGISchema>;
 
@@ -102,6 +103,8 @@ const HomeGIForm = ({
             fontSize="lg"
             {...register("title1")}
           />
+          <ErrorsMessage>{errors.title1?.message}</ErrorsMessage>
+
           <FormLabel fontSize="25px">Title2</FormLabel>
           <Input
             placeholder="homeGI Title2"
@@ -109,6 +112,7 @@ const HomeGIForm = ({
             fontSize="lg"
             {...register("title2")}
           />
+          <ErrorsMessage>{errors.title2?.message}</ErrorsMessage>
 
           <FormLabel fontSize="25px">Content</FormLabel>
           <Input
@@ -117,6 +121,7 @@ const HomeGIForm = ({
             fontSize="lg"
             {...register("content")}
           />
+          <ErrorsMessage>{errors.content?.message}</ErrorsMessage>
 
           <FormLabel fontSize="25px">Width</FormLabel>
           <Input

@@ -9,6 +9,7 @@ import noImage from "../../assets/noImage.jpg";
 import NewsEventsCard from "@/app/Components/newsEvents/NewsEventsCard";
 import Footer from "@/app/home/components/footer";
 import RedLine from "@/app/home/components/RedLine";
+import HeroSection from "@/app/experience/components/ui/HeroSection";
 
 interface Props {
   params: { id: string };
@@ -18,7 +19,11 @@ const NewsEventsDetailed = async ({ params }: Props) => {
   const newsEvents = await prisma.newsEvents.findUnique({
     where: { id: parseInt(params.id) },
   });
-
+  const eventsHeader = await prisma.headerHome.findFirst({
+    where: {
+      opacity: "2",
+    },
+  });
   const restNewsEvents = await prisma.newsEvents.findMany();
   const filteredNewsEvents = restNewsEvents.filter(
     (event) => event.id !== newsEvents?.id
@@ -32,7 +37,14 @@ const NewsEventsDetailed = async ({ params }: Props) => {
   const randomNewsEvents = getRandomNewsEvents(filteredNewsEvents);
   return (
     <div className="flex flex-col overflow-y-scroll scrollbar-hide">
-      <Header header={"Events & News"}></Header>
+      {/* <Header header={"Events & News"}></Header> */}
+      <div className="mb-12">
+        <HeroSection
+          title={eventsHeader!.title}
+          description={eventsHeader!.description}
+          imageSrc={eventsHeader!.image}
+        />
+      </div>
       <NewsEventsChild
         Title={newsEvents.title}
         description={newsEvents.description}

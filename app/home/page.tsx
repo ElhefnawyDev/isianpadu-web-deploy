@@ -135,7 +135,7 @@ export default async function Home() {
           backgroundRepeat: "no-repeat", // Prevent the image from repeating
         }}
       >
-        <div className="flex absolute max-sm:mt-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[62%] w-full">
+        <div className="flex absolute max-sm:mt-14 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[62%] w-full">
           <div className="flex flex-col items-center gap-8 w-full max-w-8xl relative z-10">
             {/* Content Section */}
             <div className="flex flex-wrap 2xl:flex-row flex-col justify-center gap-8 items-center">
@@ -154,8 +154,11 @@ export default async function Home() {
                   projects.
                 </p>
               </div>
-              <div className="2xl:-top-12 relative">
+              <div className="max-sm:hidden 2xl:-top-12 relative">
                 <ClientLogos clientLogos={clientLogos} />
+              </div>
+              <div className="max-sm:block hidden 2xl:-top-12 relative">
+              <InHouseProjects projectsLogos={projectLogos} />
               </div>
             </div>
 

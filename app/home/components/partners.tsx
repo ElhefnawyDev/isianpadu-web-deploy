@@ -23,11 +23,11 @@ const Partners = async () => {
         {/* Container for text and divider */}
         <div className="flex flex-col sm:flex-row items-center w-full sm:w-auto">
           <div
-            className={`text-[#2D2D2D] font-bold ${montserrat.className} text-lg sm:text-2xl mb-2 sm:mb-0`}
+            className={`text-[#2D2D2D] mx-2 font-bold ${montserrat.className} text-lg sm:text-2xl mb-2 sm:mb-0`}
           >
             PARTNERS
           </div>
-          <div className="hidden sm:block w-px h-12 bg-zinc-300 mx-4"></div>
+          <div className="hidden sm:block w-px h-12 bg-zinc-300"></div>
         </div>
 
         {/* Marquee container */}

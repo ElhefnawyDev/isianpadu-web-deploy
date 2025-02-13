@@ -71,7 +71,6 @@ export default function ExperienceSection() {
     <section className="w-full overflow-hidden bg-background py-44 items-center justify-center  max-sm:py-20">
       <div className="flex flex-col items-center gap-6 text-center mx-auto">
         <div className="space-y-4">
-          <p className="text-muted-foreground text-sm">What our customer say</p>
           <h2 className="text-4xl font-bold">Experience</h2>
         </div>
         <p className="mt-4 max-w-6xl mx-auto text-center text-lg leading-relaxed text-muted-foreground max-sm:px-5">
