@@ -29,13 +29,13 @@ const ProgressBarTable = ({children}: PropsWithChildren) => {
               <Th color={"white"}>Created At</Th>
               <Th color={"white"}>Updated At</Th>             
               <Th color={"white"} isNumeric>
-                <Button
+                {/* <Button
                   colorScheme="teal"
                   variant="outline"
                   onClick={() => route.push("/admin/progressbar/new")}
                 >
                   Create
-                </Button>{" "}
+                </Button>{" "} */}
               </Th>
             </Tr>
           </Thead>

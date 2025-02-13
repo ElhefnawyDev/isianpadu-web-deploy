@@ -101,9 +101,7 @@ const page = async ({ params }: Props) => {
   });
   const Font = await prisma.font.findMany();
   const corevalue = await prisma.coreValue.findMany();
-  const headerHome = await prisma.headerHome.findMany({
-
-  });
+  const headerHome = await prisma.headerHome.findMany({});
   const headerPage = await prisma.headerPages.findUnique({
     where: {
       id: 1,
@@ -654,9 +652,9 @@ const page = async ({ params }: Props) => {
                 <Td> {progress.createdAt.toDateString()}</Td>
                 <Td> {progress.updatedAt.toDateString()}</Td>
                 <Td isNumeric>
-                  <ProgressBarDeleteButton
+                  {/* <ProgressBarDeleteButton
                     servicesId={progress.id}
-                  ></ProgressBarDeleteButton>
+                  ></ProgressBarDeleteButton> */}
 
                   <Link href={`/admin/progressbar/${progress.id}/edit`}>
                     <IconButton
